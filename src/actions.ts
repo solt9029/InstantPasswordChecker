@@ -8,8 +8,10 @@ const delay = (time: number) =>
 
 export const actions = {
   setPassword: actionCreator<string>('SET_PASSWORD'),
-  setInputState: actionCreator<InputState>('SET_INPUT_STATE'),
   addLocalStorage: actionCreator<void>('ADD_LOCAL_STORAGE'),
+  ready: actionCreator<void>('READY'),
+  activate: actionCreator<string>('ACTIVATE'),
+  pause: actionCreator<void>('PAUSE'),
   handleChange: (value: string) => {
     return async (dispatch: any, getState: any) => {
       const { inputState } = getState();
@@ -19,16 +21,11 @@ export const actions = {
       }
 
       if (inputState === InputState.READY) {
-        dispatch(actions.setInputState(InputState.ACTIVE));
-        dispatch(actions.setPassword(value));
-
+        dispatch(actions.activate(value));
         await delay(500);
-        dispatch(actions.setInputState(InputState.PAUSED));
-        dispatch(actions.addLocalStorage());
-        dispatch(actions.setPassword(''));
-
+        dispatch(actions.pause());
         await delay(500);
-        dispatch(actions.setInputState(InputState.READY));
+        dispatch(actions.ready());
       }
     };
   },

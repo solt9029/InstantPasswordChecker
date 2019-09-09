@@ -19,14 +19,24 @@ export const initialState: State = {
 
 export const reducer = reducerWithInitialState(initialState)
   .case(actions.setPassword, (state, password) => ({ ...state, password }))
-  .case(actions.setInputState, (state, inputState) => ({
+  .case(actions.ready, state => ({
     ...state,
-    inputState,
+    inputState: InputState.READY,
   }))
-  .case(actions.addLocalStorage, state => {
+  .case(actions.activate, (state, password) => ({
+    ...state,
+    password,
+    inputState: InputState.ACTIVE,
+  }))
+  .case(actions.pause, state => {
     const prevPasswordsStr = localStorage.getItem('passwords');
     const prevPasswords = prevPasswordsStr ? prevPasswordsStr.split(',') : [];
     const passwords = [...prevPasswords, state.password];
+    console.log(passwords);
     localStorage.setItem('passwords', passwords.toString());
-    return state;
+    return {
+      ...state,
+      password: '',
+      inputState: InputState.PAUSED,
+    };
   });
