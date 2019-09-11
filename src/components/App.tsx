@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import NotFound from './pages/NotFound';
-import Index from './pages/Index';
+import NotFound from '../pages/NotFound';
+import Index from '../pages/Index';
 import styled from 'styled-components';
 import { Navbar } from 'reactstrap';
 
