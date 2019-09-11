@@ -1,7 +1,12 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
-import reducer from './reducer';
+import * as reducers from './reducers';
+import history from './history';
 
-const store = createStore(reducer);
-
-export default store;
+export default createStore(
+  combineReducers({
+    ...reducers,
+    router: routerReducer,
+  }),
+  applyMiddleware(routerMiddleware(history))
+);

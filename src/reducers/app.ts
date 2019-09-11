@@ -1,6 +1,6 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import * as actions from './actions';
-import utils from './utils';
+import * as actions from '../actions/app';
+import utils from '../utils';
 
 export enum InputState {
   READY,

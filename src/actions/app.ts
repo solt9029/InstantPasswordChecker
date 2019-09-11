@@ -1,5 +1,5 @@
 import actionCreatorFactory from 'typescript-fsa';
-import { InputState } from './reducer';
+import { InputState } from '../reducers/app';
 
 const actionCreator = actionCreatorFactory();
 
