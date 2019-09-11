@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Input } from 'reactstrap';
-import { reducer, initialState } from '../reducer';
-import { actions } from '../actions';
+import reducer, { initialState } from '../reducer';
+import * as actions from '../actions';
 import useThunkReducer from 'react-hook-thunk-reducer';
 
 const StyledInput = styled(Input)`

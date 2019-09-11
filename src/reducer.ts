@@ -1,5 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { actions } from './actions';
+import * as actions from './actions';
 import utils from './utils';
 
 export enum InputState {
@@ -18,7 +18,7 @@ export const initialState: State = {
   inputState: InputState.READY,
 };
 
-export const reducer = reducerWithInitialState(initialState)
+export default reducerWithInitialState(initialState)
   .case(actions.setPassword, (state, password) => ({ ...state, password }))
   .case(actions.ready, state => ({
     ...state,
