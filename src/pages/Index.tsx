@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col, Form } from 'reactstrap';
-import PasswordInput from '../components/PasswordInput';
+import PasswordInput from '../containers/PasswordInput';
 
 const StyledContainer = styled(Container)`
   text-align: center;
