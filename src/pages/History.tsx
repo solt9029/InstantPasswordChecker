@@ -1,18 +1,14 @@
 import React from 'react';
-import { Container, Row, Col, Jumbotron } from 'reactstrap';
+import { Row, Col, Jumbotron } from 'reactstrap';
 import PasswordHistory from '../containers/PasswordHistory';
-import styled from 'styled-components';
-
-const StyledContainer = styled(Container)`
-  text-align: center;
-`;
+import Container from '../components/styled/Container';
 
 const Index: React.FC = () => (
   <>
     <Jumbotron>
-      <StyledContainer>
+      <Container center={1}>
         <h1>Password History</h1>
-      </StyledContainer>
+      </Container>
     </Jumbotron>
     <Container>
       <Row>

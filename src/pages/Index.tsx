@@ -1,20 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Container, Row, Col, Form, Jumbotron } from 'reactstrap';
+import { Row, Col, Form, Jumbotron } from 'reactstrap';
 import PasswordInput from '../containers/PasswordInput';
-
-const StyledContainer = styled(Container)`
-  text-align: center;
-`;
+import Container from '../components/styled/Container';
 
 const Index: React.FC = () => (
   <>
     <Jumbotron>
-      <StyledContainer>
+      <Container center={1}>
         <h1>Password Input</h1>
-      </StyledContainer>
+      </Container>
     </Jumbotron>
-    <StyledContainer>
+    <Container center={1}>
       <Row>
         <Col xs={12}>
           <Form>
@@ -22,7 +18,7 @@ const Index: React.FC = () => (
           </Form>
         </Col>
       </Row>
-    </StyledContainer>
+    </Container>
   </>
 );
 
