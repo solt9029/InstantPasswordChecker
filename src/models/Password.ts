@@ -12,11 +12,14 @@ export interface PasswordInterface {
   history: List<string>;
 }
 
-export default class Password extends Record({
-  inputValue: '',
-  inputState: InputState.READY,
-  history: List.of(),
-}) {
+export default class Password extends Record(
+  {
+    inputValue: '',
+    inputState: InputState.READY,
+    history: List.of(),
+  },
+  'Password'
+) {
   setInputValue(inputValue: string): Password {
     return this.set('inputValue', inputValue);
   }
