@@ -2,14 +2,13 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import * as reducers from './reducers';
 import history from './history';
-import { PasswordState } from './reducers/password';
 import rootSaga from './sagas';
 import createSagaMiddleware from 'redux-saga';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 export interface AppState {
-  password: PasswordState;
+  password: any;
   router: any;
 }
 

@@ -6,7 +6,7 @@ import {
 } from './../actions/password';
 import { put, select } from 'redux-saga/effects';
 import { Action } from 'typescript-fsa';
-import { InputState } from '../reducers/password';
+import { InputState } from '../models/Password';
 import { delay } from '../utils';
 import { AppState } from '../store';
 
