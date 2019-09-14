@@ -7,12 +7,16 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { ConnectedRouter } from 'connected-react-router';
 import history from './history';
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <App />
-    </ConnectedRouter>
+    <PersistGate persistor={persistStore(store)}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );
