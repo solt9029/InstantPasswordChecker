@@ -10,7 +10,7 @@ const StyledCard = styled(Card)`
   margin-bottom: 10px;
 `;
 
-const DataList: React.SFC<Props> = ({ history }: Props) => (
+const PasswordHistory: React.SFC<Props> = ({ history }: Props) => (
   <>
     {history.map((value, index) => {
       return (
@@ -22,4 +22,4 @@ const DataList: React.SFC<Props> = ({ history }: Props) => (
   </>
 );
 
-export default DataList;
+export default PasswordHistory;

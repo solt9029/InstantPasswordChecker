@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Jumbotron } from 'reactstrap';
-import DataList from '../containers/DataList';
+import PasswordHistory from '../containers/PasswordHistory';
 import styled from 'styled-components';
 
 const StyledContainer = styled(Container)`
@@ -17,7 +17,7 @@ const Index: React.FC = () => (
     <Container>
       <Row>
         <Col xs={12}>
-          <DataList />
+          <PasswordHistory />
         </Col>
       </Row>
     </Container>
