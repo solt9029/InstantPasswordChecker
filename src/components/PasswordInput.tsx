@@ -11,17 +11,18 @@ interface Props {
   inputValue: string;
 }
 
-const PasswordInput: React.SFC<Props> = (props: Props) => {
-  return (
-    <input
-      onChange={event => {
-        props.changeInput(event.target.value);
-      }}
-      value={props.inputValue}
-      type="text"
-      placeholder="password"
-    />
-  );
-};
+const PasswordInput: React.SFC<Props> = ({
+  changeInput,
+  inputValue,
+}: Props) => (
+  <StyledInput
+    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+      changeInput(event.target.value);
+    }}
+    value={inputValue}
+    type="text"
+    placeholder="password"
+  />
+);
 
 export default PasswordInput;

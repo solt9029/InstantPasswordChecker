@@ -13,7 +13,6 @@ const delay = (time: number) =>
 
 export function* changeInput({ payload }: Action<string>) {
   const state = yield select();
-  console.log(state);
   const { inputState } = state.password;
   if (inputState === InputState.ACTIVE) {
     yield put(setInputValue(payload));
