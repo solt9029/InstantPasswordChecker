@@ -7,9 +7,7 @@ import {
 import { put, select } from 'redux-saga/effects';
 import { Action } from 'typescript-fsa';
 import { InputState } from '../reducers/password';
-
-const delay = (time: number) =>
-  new Promise(resolve => setTimeout(resolve, time));
+import { delay } from '../utils';
 
 export function* changeInput({ payload }: Action<string>) {
   const state = yield select();

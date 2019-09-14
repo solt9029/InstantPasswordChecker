@@ -10,11 +10,13 @@ export enum InputState {
 export interface PasswordState {
   inputValue: string;
   inputState: InputState;
+  history: string[];
 }
 
 export const initialState: PasswordState = {
   inputValue: '',
   inputState: InputState.READY,
+  history: [],
 };
 
 export default reducerWithInitialState(initialState)
@@ -34,6 +36,7 @@ export default reducerWithInitialState(initialState)
   .case(actions.pauseInput, state => {
     return {
       ...state,
+      history: [...state.history, state.inputValue],
       inputValue: '',
       inputState: InputState.PAUSED,
     };
