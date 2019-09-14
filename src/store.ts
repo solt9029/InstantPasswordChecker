@@ -19,7 +19,7 @@ const middlewares = [sagaMiddleware, routerMiddleware(history)];
 
 // reducers
 const persistConfig = {
-  key: 'password',
+  key: 'app',
   storage,
   whitelist: ['password'],
 };
