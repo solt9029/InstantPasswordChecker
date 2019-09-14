@@ -1,16 +1,17 @@
 import { State } from '../store';
-import * as actions from '../reducers/app';
+import * as actions from '../actions/password';
 import PasswordInput from '../components/PasswordInput';
-import { ThunkDispatch } from 'redux-thunk';
 import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { Action } from 'typescript-fsa';
 
 export default connect(
   (state: State) => ({
-    password: state.app.password,
+    inputValue: state.password.inputValue,
   }),
-  (dispatch: ThunkDispatch<any, any, any>) => ({
-    handleChange: (v: string) => {
-      dispatch(actions.handleChange(v));
+  (dispatch: Dispatch<Action<any>>) => ({
+    changeInput: (v: string) => {
+      dispatch(actions.changeInput(v));
     },
   })
 )(PasswordInput);

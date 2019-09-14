@@ -7,17 +7,17 @@ const StyledInput = styled(Input)`
 `;
 
 interface Props {
-  handleChange: any;
-  password: string;
+  changeInput: any;
+  inputValue: string;
 }
 
 const PasswordInput: React.SFC<Props> = (props: Props) => {
   return (
     <input
       onChange={event => {
-        props.handleChange(event.target.value);
+        props.changeInput(event.target.value);
       }}
-      value={props.password}
+      value={props.inputValue}
       type="text"
       placeholder="password"
     />

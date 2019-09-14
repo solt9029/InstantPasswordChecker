@@ -2,18 +2,26 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import * as reducers from './reducers';
 import history from './history';
-import { State as AppState } from './reducers/app';
-import thunk from 'redux-thunk';
+import { PasswordState } from './reducers/password';
+import rootSaga from './sagas';
+import createSagaMiddleware from 'redux-saga';
 
 export interface State {
-  app: AppState;
+  password: PasswordState;
   router: any;
 }
 
-export default createStore(
+const sagaMiddleware = createSagaMiddleware();
+const middlewares = [sagaMiddleware, routerMiddleware(history)];
+
+const store = createStore(
   combineReducers<State>({
     ...reducers,
     router: connectRouter(history),
   }),
-  applyMiddleware(thunk, routerMiddleware(history))
+  applyMiddleware(...middlewares)
 );
+
+sagaMiddleware.run(rootSaga);
+
+export default store;
