@@ -8,9 +8,10 @@ import { put, select } from 'redux-saga/effects';
 import { Action } from 'typescript-fsa';
 import { InputState } from '../reducers/password';
 import { delay } from '../utils';
+import { AppState } from '../store';
 
 export function* changeInput({ payload }: Action<string>) {
-  const state = yield select();
+  const state: AppState = yield select();
   const { inputState } = state.password;
   if (inputState === InputState.ACTIVE) {
     yield put(setInputValue(payload));

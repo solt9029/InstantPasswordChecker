@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-export interface State {
+export interface AppState {
   password: PasswordState;
   router: any;
 }
@@ -23,7 +23,7 @@ const persistConfig = {
   storage,
   whitelist: ['password'],
 };
-const combinedReducers = combineReducers<State>({
+const combinedReducers = combineReducers<AppState>({
   ...reducers,
   router: connectRouter(history),
 });
