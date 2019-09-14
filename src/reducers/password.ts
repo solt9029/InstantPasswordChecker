@@ -1,6 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
 import * as actions from '../actions/password';
-import utils from '../utils';
 
 export enum InputState {
   READY,
@@ -33,7 +32,6 @@ export default reducerWithInitialState(initialState)
     inputState: InputState.ACTIVE,
   }))
   .case(actions.pauseInput, state => {
-    utils.localStorage.addArrayItem('passwords', state.inputValue);
     return {
       ...state,
       inputValue: '',
