@@ -1,6 +1,6 @@
 declare module 'redux-persist-transform-immutable' {
   import { Refs } from 'remotedev-serialize';
-  import { Transform } from 'redux-persist/es/types';
+  import { Transform } from 'redux-persist';
 
   interface Config {
     whitelist?: Array<string>;
