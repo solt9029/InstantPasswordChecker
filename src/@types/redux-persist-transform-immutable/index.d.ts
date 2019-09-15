@@ -1,3 +1,14 @@
 declare module 'redux-persist-transform-immutable' {
-  export default function(config: any): any;
+  import { Refs } from 'remotedev-serialize';
+  import { Transform } from 'redux-persist/es/types';
+
+  interface Config {
+    whitelist?: Array<string>;
+    blacklist?: Array<string>;
+    records?: Refs;
+  }
+
+  export default function(
+    config: Config
+  ): Transform<(input: any) => string, (input: string) => any, any, any>;
 }
