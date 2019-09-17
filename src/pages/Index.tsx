@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Form, Jumbotron } from 'reactstrap';
 import PasswordInput from '../containers/PasswordInput';
-import Container from '../components/styled/Container';
+import Container from '../styled/Container';
 
 const Index: React.FC = () => (
   <>
