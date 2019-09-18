@@ -5,6 +5,7 @@ import Index from '../pages/Index';
 import styled from 'styled-components';
 import { Navbar } from 'reactstrap';
 import History from '../pages/History';
+import Ranking from '../pages/Ranking';
 
 const StyledNavbar = styled(Navbar)`
   color: white;
@@ -17,6 +18,7 @@ const App: React.FC = () => {
       <Switch>
         <Route exact path="/" component={Index} />
         <Route exact path="/history" component={History} />
+        <Route exact path="/ranking" component={Ranking} />
         <Route component={NotFound} />
       </Switch>
     </div>
