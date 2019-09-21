@@ -1,4 +1,5 @@
 import React from 'react';
+import { Table } from 'reactstrap';
 
 interface Props {
   history: string[];
@@ -18,15 +19,24 @@ const PasswordRanking: React.SFC<Props> = ({ history }: Props) => {
   );
 
   return (
-    <>
-      {countKeysSorted.map(key => {
-        return (
-          <div key={key}>
-            {key}: {count[key]}
-          </div>
-        );
-      })}
-    </>
+    <Table>
+      <thead>
+        <tr>
+          <th>Password</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        {countKeysSorted.map(key => {
+          return (
+            <tr key={key}>
+              <td>{key}</td>
+              <td>{count[key]}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </Table>
   );
 };
 

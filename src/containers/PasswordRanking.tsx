@@ -3,5 +3,5 @@ import PasswordRanking from '../components/PasswordRanking';
 import { connect } from 'react-redux';
 
 export default connect((state: AppState) => ({
-  history: state.password.history,
+  history: state.password.history.reverse(),
 }))(PasswordRanking);
