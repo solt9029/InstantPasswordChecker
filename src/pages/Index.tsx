@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Form, Jumbotron } from 'reactstrap';
 import PasswordInput from '../containers/PasswordInput';
 import Container from '../styled/Container';
+import LinkSection from '../components/LinkSection';
 
 const Index: React.FC = () => (
   <>
@@ -16,6 +17,7 @@ const Index: React.FC = () => (
           <Form>
             <PasswordInput />
           </Form>
+          <LinkSection />
         </Col>
       </Row>
     </Container>
