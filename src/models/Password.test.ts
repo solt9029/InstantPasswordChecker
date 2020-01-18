@@ -1,6 +1,6 @@
 import Password, { InputState } from './Password';
 
-describe('Password', () => {
+describe('Password model', () => {
   it('should set input value.', () => {
     const inputValue = 'inputValue';
     const password = new Password().setInputValue(inputValue);
